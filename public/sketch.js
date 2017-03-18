@@ -15,32 +15,31 @@ function setup() {
   socket = io.connect("http://"+server_address+":"+server_port);
   socket.on('mouse', newDrawing);
 
-  var reset = document.getElementById("reset");
-  reset.addEventListener('click', resetCanvas);
+  var reset = document.getElementById("reset"); //Get ze reset button
+  reset.addEventListener('click', resetCanvas); //Bind ze event listener
 }
 
-function newDrawing(data) {
+function newDrawing(data) { //This gets triggered when the client recieves data
   noStroke();
   fill(secondary_color[0], secondary_color[1], secondary_color[2]); 
   ellipse(data.x, data.y, brushSize, brushSize);
 }
 
-function mouseDragged() {
-
-  var data = {
+function mouseDragged() { //P5's default mouse-dragged event
+  var data = { //Create ze data
     x: mouseX,
     y: mouseY
   }
-  socket.emit('mouse', data);
+  socket.emit('mouse', data); //Send ze data
 
   noStroke();
   fill(primary_color[0], primary_color[1], primary_color[2]);
-  ellipse(mouseX, mouseY, brushSize, brushSize);
+  ellipse(mouseX, mouseY, brushSize, brushSize); //Draw your mouse movement (while button 1 is held down)
 }
 
 function draw() {
 }
 
-function resetCanvas() {
+function resetCanvas() { //Do I really have to explain this?
   background(51);
 }

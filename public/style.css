@@ -1,0 +1,14 @@
+.has-items-centered {
+  align-items: center;
+  text-align: center;
+}
+p {
+  color: red;
+  font-size: 1.2em;
+}
+body {
+  background-color: rgb(85, 85, 85);
+}
+.has-bottom-padding {
+  padding-bottom: 1rem;
+}

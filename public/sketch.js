@@ -2,7 +2,7 @@ var socket;
 
 var brushSize = 6; //Do I really have to explain this?
 
-var server_address = "djsall.ddns.net"; //specify an ip-address or a domain name where the node server is running ( without the http:// prefix)
+var server_address = ""; //specify an ip-address or a domain name where the node server is running ( without the http:// prefix)
 var server_port = "81"; //specify the port you set in the server, make sure to be on a lan or have port forwarding on that port in your router and/or firewall for that port to your machine
 
 var server_address = ""; //specify an ip-address or a domain name where the node server is running ( without the http:// prefix)
